@@ -1,13 +1,4 @@
-ESX = nil
 VIP = false
-local PlayerLoaded = false
-
-CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Wait(0)
-	end
-end)
 
 CreateThread(function()
 	TriggerServerEvent("ddx_vip:checkVip", source)
@@ -61,9 +52,11 @@ CreateThread(function()
 			end
 			if GetDistanceBetweenCoords(playerPOS, v.x, v.y, v.z, true) < 2 and VIP == true then
 				Visual.Subtitle("Appuyez sur ~r~E~w~ pour ouvrir le shop", 100)
-                Keys.Register('E', 'E', 'Open RageUI Showcase menu default.', function()
+		
+                Keys.Register('E', 'E', 'Open vip shop.', function()
 					RageUI.Visible(mainMenu, not RageUI.Visible(mainMenu))
 				end)
+			
 			end
 		end
 
