@@ -13,17 +13,17 @@ CreateThread(function()
 	TriggerServerEvent("ddx_vip:checkVip", source)
 end)
 
-RegisterNetEvent("ddx_vip:vipChecked")
-AddEventHandler("ddx_vip:vipChecked", function()
-	VIP = true
-	ESX.ShowNotification('VIP ACTIF')
-end)
-
 local ShowNotification = function(text)
     SetNotificationTextEntry("STRING")
     AddTextComponentString(text)
     DrawNotification(false, false)
 end
+
+RegisterNetEvent("ddx_vip:vipChecked")
+AddEventHandler("ddx_vip:vipChecked", function()
+	VIP = true
+	ShowNotification('VIP ACTIF')
+end)
 
 vipShop_config = {
 	position = {
