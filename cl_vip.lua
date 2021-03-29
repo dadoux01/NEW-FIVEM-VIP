@@ -78,7 +78,7 @@ CreateThread(function()
 			end
 		end)
 
-		Wait(5)
+		Wait(4)
     end
 end)
 
