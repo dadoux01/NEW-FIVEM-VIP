@@ -88,3 +88,17 @@ CreateThread(function()
 		Wait(5)
     end
 end)
+
+CreateThread(function()
+	for k,v in pairs(vipShop_config.position) do
+		local vipBlip = AddBlipForCoord(v.x,v.y,v.z)
+		SetBlipDisplay(vipBlip, 4)
+		SetBlipSprite(vipBlip, 605)
+		SetBlipColour(vipBlip, 5)
+		SetBlipScale(vipBlip, 0.8)
+		SetBlipAsShortRange(vipBlip, true)
+		BeginTextCommandSetBlipName("STRING")
+		AddTextComponentString("Vip Shop")
+		EndTextCommandSetBlipName(vipBlip)
+	end
+end)
